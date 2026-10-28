@@ -1,0 +1,32 @@
+# Compiled binaries
+/highway-fighter
+/highway-warrior
+*.out
+*.app
+*.exe
+
+# Object files and build directories
+obj/
+*.o
+*.obj
+*.a
+*.so
+*.dylib
+
+# Agent and Skill configurations
+.agents/
+skills/
+.skills/
+.gemini/
+.claude/
+
+# IDE and Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS artifacts
+.DS_Store
+Thumbs.db
