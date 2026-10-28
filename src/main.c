@@ -1,5 +1,6 @@
 #include "game.h"
 #include <stdio.h>
+#include <string.h>
 #include <math.h>
 
 static void ResetGame(GameContext *ctx, bool reset_score) {
@@ -15,7 +16,14 @@ static void ResetGame(GameContext *ctx, bool reset_score) {
     ctx->state_timer = 0.0f;
 }
 
-int main(void) {
+int main(int argc, char **argv) {
+    bool auto_screenshots = false;
+    for (int i = 1; i < argc; i++) {
+        if (strcmp(argv[i], "--screenshots") == 0) {
+            auto_screenshots = true;
+        }
+    }
+
     SetConfigFlags(FLAG_WINDOW_RESIZABLE | FLAG_VSYNC_HINT);
     InitWindow(SCREEN_W, SCREEN_H, "Highway Fighter - Konami Road Fighter Tribute");
     SetWindowMinSize(VIRTUAL_W, VIRTUAL_H);
@@ -140,6 +148,40 @@ int main(void) {
 
         // Blit and upscale to actual window with optional CRT effect
         Render_ToScreen(&ctx.render, GetScreenWidth(), GetScreenHeight());
+
+        // Screenshot Capture (F12 or P)
+        if (IsKeyPressed(KEY_F12) || IsKeyPressed(KEY_P)) {
+            if (!DirectoryExists("screenshots")) {
+                MakeDirectory("screenshots");
+            }
+            const char *shot_path = TextFormat("screenshots/screenshot_%d.png", (int)GetTime());
+            TakeScreenshot(shot_path);
+            TraceLog(LOG_INFO, "Screenshot saved to %s", shot_path);
+        }
+
+        // Automated showcase screenshot generator
+        if (auto_screenshots) {
+            static int shot_frame = 0;
+            shot_frame++;
+            if (!DirectoryExists("screenshots")) {
+                MakeDirectory("screenshots");
+            }
+
+            if (shot_frame == 15) {
+                TakeScreenshot("screenshots/title_screen.png");
+                ctx.state = STATE_PLAYING;
+                ResetGame(&ctx, true);
+                ctx.player.speed = 195.0f;
+                ctx.player.gear = 1;
+                ctx.player.fuel = 88.0f;
+            } else if (shot_frame == 90) {
+                TakeScreenshot("screenshots/gameplay_action.png");
+                ctx.render.crt_enabled = true;
+            } else if (shot_frame == 140) {
+                TakeScreenshot("screenshots/gameplay_crt.png");
+                break;
+            }
+        }
     }
 
     // Teardown & Resource Cleanup

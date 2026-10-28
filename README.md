@@ -6,6 +6,18 @@ Highway Fighter is an homage to Konami's classic 1984 arcade and MSX/NES title *
 
 ---
 
+## Screenshots
+
+<p align="center">
+  <img src="screenshots/title_screen.png" alt="Title Screen" width="48%" />
+  <img src="screenshots/gameplay_action.png" alt="High Speed Action" width="48%" />
+</p>
+<p align="center">
+  <img src="screenshots/gameplay_crt.png" alt="Retro CRT Mode" width="70%" />
+</p>
+
+---
+
 ## Features
 
 - **Classic 80s Arcade Action**: High-speed vertical scrolling inspired by Konami's *Road Fighter*.
@@ -29,6 +41,7 @@ Highway Fighter is an homage to Konami's classic 1984 arcade and MSX/NES title *
 | **Direct Gear Select** | `1` (Low Gear) | `2` (High Gear) |
 | **Start / Restart** | `Enter` / `Space` | `Z` |
 | **Toggle CRT Scanlines** | `F1` | `C` |
+| **Take Screenshot** | `F12` | `P` |
 | **Quit Game** | `Escape` | Window Close |
 
 > **Pro Tip (Counter-Steering)**: When you bump into another vehicle, your car will start sliding sideways. Steer immediately in the opposite direction of the slide to regain traction and avoid spinning out!
