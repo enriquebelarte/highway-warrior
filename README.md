@@ -9,11 +9,8 @@ Highway Fighter is an homage to Konami's classic 1984 arcade and MSX/NES title *
 ## Screenshots
 
 <p align="center">
-  <img src="screenshots/title_screen.png" alt="Title Screen" width="48%" />
   <img src="screenshots/gameplay_action.png" alt="High Speed Action" width="48%" />
-</p>
-<p align="center">
-  <img src="screenshots/gameplay_crt.png" alt="Retro CRT Mode" width="70%" />
+  <img src="screenshots/gameplay_crt.png" alt="Retro CRT Mode" width="48%" />
 </p>
 
 ---
@@ -203,13 +200,12 @@ highway-fighter/
 
 ---
 
-## Credits & Authors
+## Credits
 
-- **Prompting & Game Design**: Enrique Belarte Luque
 - **Original Tribute**: Homage to Konami's *Road Fighter* (1984)
 
 ---
 
 ## License
 
-This project is open-source and intended as an educational tribute to Konami's *Road Fighter* (1984).
+This project is licensed under the terms of the GNU General Public License v3.0 (GPL-3.0). See the [LICENSE](LICENSE) file for the full license text.

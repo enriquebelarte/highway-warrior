@@ -409,9 +409,6 @@ void Render_Game(const RenderSystem *rs, const GameContext *ctx) {
                 DrawText(press, (VIRTUAL_W - wp) / 2, 186, 10, GREEN);
             }
 
-            const char *credit = "Made prompting by Enrique Belarte Luque";
-            int wc = MeasureText(credit, 10);
-            DrawText(credit, (VIRTUAL_W - wc) / 2, 214, 10, (Color){ 180, 200, 220, 255 });
         }
 
     EndTextureMode();
